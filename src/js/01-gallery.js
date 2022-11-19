@@ -1,12 +1,12 @@
-import { galleryItems } from "./gallery-items.js";
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import { galleryItems } from './gallery-items.js';
+import SimpleLightbox from 'simplelightbox';
+import '/node_modules/simplelightbox/dist/simple-lightbox.min.css';
 
-const galleryList = document.querySelector(".gallery");
+const galleryList = document.querySelector('.gallery');
 
 const galleryItemsMarkup = galleryItems
   .map(
-    (img) =>
+    img =>
       `<div class="gallery__item">
       <a class="gallery__link" href=${img.original}>
       <img
@@ -17,10 +17,10 @@ const galleryItemsMarkup = galleryItems
     </a>
     </div>`
   )
-  .join("");
-galleryList.insertAdjacentHTML("afterbegin", galleryItemsMarkup);
-new SimpleLightbox(".gallery a", {
-  captionsData: "alt",
+  .join('');
+galleryList.insertAdjacentHTML('afterbegin', galleryItemsMarkup);
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
   captionDelay: 250,
   disableRightClick: true,
 });
