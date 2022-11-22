@@ -14,12 +14,10 @@ function onInput(e) {
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formDataObj));
 }
 
-// const savedDataObj = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-const saveLocalItems = localStorage.getItem(LOCALSTORAGE_KEY);
-const savedDataObj = JSON.parse(saveLocalItems);
+const savedDataObj = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 
 function populateData() {
-  if (saveLocalItems) {
+  if (savedDataObj) {
     !savedDataObj.email ? '' : (input.value = savedDataObj.email);
     !savedDataObj.message ? '' : (textarea.value = savedDataObj.message);
   }
